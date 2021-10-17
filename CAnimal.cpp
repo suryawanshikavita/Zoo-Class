@@ -22,7 +22,7 @@ CAnimal::CAnimal(std::string name, int age, double weight, std::string sound) {
 	m_sSound = sound;
 }
 CAnimal::~CAnimal() {
-	cout << m_sName << " is killed" << endl; //
+	//cout << m_sName << " is killed" << endl; //
 }
 // Setter function for animal name
 void CAnimal::setName(std::string name) {
@@ -55,39 +55,33 @@ double CAnimal::getWeight() {
 
 // This method is to feed and to get increased weight of an animal
 void CAnimal::feed() {
-	cout << "weight before eating: " << m_dWeight << endl;
+	cout << this->getName() << "'s weight before eating: " << m_dWeight << endl;
 	m_dWeight += 0.5;
-	cout << "weight after eating: " << m_dWeight << endl;
+	cout << this->getName() << "'s weight after eating: " << m_dWeight << endl;
 }
 
 // This method is to get the status of an animal based on its age
 void CAnimal::status() {
 
 	int age_in_years = m_iAge / 365;
-	cout << "Age in years: " << age_in_years << endl;
-	switch (age_in_years)
-	{
-	case 1:
-		age_in_years > 1;
-		cout << "Animal is older" << endl;
-		break;
-	case 2:
-		age_in_years < 1;
-		cout << "Animal is young" << endl;
-		break;
+	//cout << "Age in years: " << age_in_years << endl;
+	if (age_in_years >= 1) {
+		cout << this->getName() << " is older" << endl;
 	}
-
+	else {
+		cout << this->getName() << " is young" << endl;
+	}
 }
 
 // This method is to get the change in weight of an animal after its movement
 void CAnimal::move() {
-	cout << "weight before moving: " << m_dWeight << endl;
+	cout << this->getName() <<"'s weight before moving: " << m_dWeight << endl;
 	m_dWeight -= 0.25;
-	cout << "weight after moving: " << m_dWeight << endl;
+	cout << this->getName() << "'s weight after moving: " << m_dWeight << endl;
 }
 
 void CAnimal::kill() {
-	cout << "Animal is killed" << endl;
+	cout << this->getName() << " got killed" << endl;
 }
 
 //This method is to get the age of an animal
@@ -96,7 +90,8 @@ void CAnimal::aging( int x) {
 
 	m_iAge += x; //increase age by x days
 	int increased_age = m_iAge / 365;
-	cout << "Animal's current age is " << increased_age << " years" << endl;
+	//cout << "Animal's current age is " << increased_age << " years" << endl;
+	cout << this->getName() << "'s age increased by " << x << " days and current age is " << increased_age  << " years and " << m_iAge % 365 << " days" << endl;
 
 }
  
