@@ -1,47 +1,28 @@
-#pragma once
 /*
- * CAnimal.h
+ * main.cpp
  *
  *  Created on: Oct 13, 2021
  *  Author: Kavita Suryawanshi
  */
 
-#ifndef CANIMAL_H_
-#define CANIMAL_H_
-#include <string>
-#include <iostream>
-#include <iomanip>
+#include "CZoo.h"
+#include "CCarnivore.h"
+#include "CHerbivore.h"
+#include "CDolphin.h"		
 
-using std::string;
-using namespace std;
-
-class CAnimal {
-protected:
-	std::string m_sName;
-	int m_iAge; //age of an animal in days
-	double m_dWeight;
-	std::string m_sStatus;
-	std::string m_sSound;
-	float m_fTotal_length;
-
-public:
-	CAnimal();
-	CAnimal(std::string name, int age, double weight, std::string sound);
-	virtual ~CAnimal(); 
-	void setName(std::string name);  
-	void setAge(int age);			
-	void setWeight(double weight);
-	std::string getName();
-	int getAge();
-	double getWeight();		
-	std::string getSound();
-	void feed(); 
-	void move();
-	void status();
-	void kill();
-	void aging(int x);
-	virtual void moving();
-	virtual void eat(CAnimal* animal);
-};
-
-#endif /* CANIMAL_H_ */
+int main(int argc, char* argv[]) {
+	CCarnivore lion("Lion", 1200, 120.0, "roar");
+	CHerbivore elephant("Elephant", 300, 100.0, "trumpet");
+	CHerbivore monkey("Monkey", 1500, 80.0, "chatter");
+	CDolphin dolphin("Dolphin", 4000, 150.0, "click");
+	CCarnivore tiger("Tiger", 2000, 13.0, "roar");
+	
+	CZoo MyZoo;
+	MyZoo.add_animals(&lion);
+	MyZoo.add_animals(&elephant);
+	MyZoo.add_animals(&monkey);
+	MyZoo.add_animals(&dolphin);
+	MyZoo.add_animals(&tiger);
+	
+	return 0;
+}
