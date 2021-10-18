@@ -20,17 +20,12 @@ CHerbivore::CHerbivore(std::string name, int age, double weight, std::string sou
 void CHerbivore::status() {
 
 	int age_in_years = m_iAge / 365;
-	std::cout << "Age in years: " << age_in_years << std::endl;
-	switch (age_in_years)
-	{
-	case 1:
-		age_in_years > 2;
-		std::cout << "Animal is dead" << std::endl;
-		break;
-	case 2:
-		age_in_years <= 2;
-		std::cout << "Animal is alive" << std::endl;
-		break;
+	cout << this->getName() << "'s age in years: " << age_in_years << " years and " << m_iAge % 365 << " days" << endl;
+	if (age_in_years >= 2) {
+		cout << this->getName() << " got old and dead" << endl;
+	}
+	else {
+		cout << this->getName() << " is young and alive" << endl;
 	}
 }
 
@@ -45,10 +40,9 @@ void CHerbivore::moving() {
 	uniform_real_distribution<> distr(FLOAT_MIN, FLOAT_MAX);
 	setprecision(3);
 
-	cout <<"Distance travelled before moving "<< m_fTotal_length << "\n";
+	cout << this->getName() << " travelled " << m_fTotal_length << " before moving " << endl;
 	float random_number = distr(eng);
 	m_fTotal_length += random_number;
-	//cout << "random number " << random_number << "\n";
-	cout << "Distance travelled after moving " << m_fTotal_length << "\n";
+	cout << this->getName() << " travelled " << m_fTotal_length << " after moving " << endl;
 	
 }
