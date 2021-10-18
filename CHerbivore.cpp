@@ -40,9 +40,9 @@ void CHerbivore::moving() {
 	uniform_real_distribution<> distr(FLOAT_MIN, FLOAT_MAX);
 	setprecision(3);
 
-	cout << this->getName() << " travelled " << m_fTotal_length << " before moving " << endl;
+	cout << this->getName() << " traveled " << m_fTotal_length << " before moving " << endl;
 	float random_number = distr(eng);
 	m_fTotal_length += random_number;
-	cout << this->getName() << " travelled " << m_fTotal_length << " after moving " << endl;
+	cout << this->getName() << " traveled " << m_fTotal_length << " after moving " << endl;
 	
 }
