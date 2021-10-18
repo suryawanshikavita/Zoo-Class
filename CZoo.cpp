@@ -25,7 +25,6 @@ void CZoo::feed() {
 
 	for (auto i = Zoo.begin(); i != Zoo.end(); i++) {
 		(*i)->feed();
-		//cout << (*i)->getName() << endl;
 	};
 }
 
