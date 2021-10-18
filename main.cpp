@@ -23,6 +23,18 @@ int main(int argc, char* argv[]) {
 	MyZoo.add_animals(&monkey);
 	MyZoo.add_animals(&dolphin);
 	MyZoo.add_animals(&tiger);
-	
+	//Output on console window
+
+	MyZoo.eat();
+	cout << "\n" << endl;
+
+	MyZoo.total_animals();
+	for (auto i = MyZoo.Zoo.begin(); i != MyZoo.Zoo.end(); i++) {
+		cout << (*i)->getName() << endl;
+	}
+	cout << "\n" << endl;
+	MyZoo.aging(30);
+
 	return 0;
 }
+
