@@ -23,6 +23,8 @@ int main(int argc, char* argv[]) {
 	MyZoo.add_animals(&monkey);
 	MyZoo.add_animals(&dolphin);
 	MyZoo.add_animals(&tiger);
+	
+	
 	//Output on console window
 
 	MyZoo.eat();
